@@ -22,13 +22,15 @@ public class AlbumController {
         albumsList.add(albumLamar);
         albumsList.add(albumSimpson);
         albumsList.add(albumMac);
-        m.addAttribute("album", albumLamar);
+        m.addAttribute("album1", albumLamar);
         m.addAttribute("album2", albumSimpson);
         m.addAttribute("album3", albumMac);
 
-//        for (Object albums : albumsList) {
-//            m.addAttribute("album", albums);
-//        }
+//    for (Object eachAlbum : albumsList) {
+//        int counter = 1;
+//        m.addAttribute("album"+counter, eachAlbum);
+//        counter++;
+//    }
         return "albums.html";
 
     }

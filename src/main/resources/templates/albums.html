@@ -12,12 +12,12 @@
 <body>
 <h1>Albums</h1>
 
-<li th:each="album : ${album}">
-    <br><img th:src="${album.imgUrl}" th:alt="${album.title}"></span>
-    <span th:text="${'Title: ' + album.title}"></span>
-    <br><span th:text="${'Artist: ' + album.artist}"></span>
-    <br><span th:text="${'Songs: ' + album.songCount}"></span>
-    <br><span th:text="${'Length: ' + album.length}"></span>
+<li th:each="album : ${album1}">
+    <br><img th:src="${album.imgUrl}" th:alt="${album1.title}"></span>
+    <span th:text="${'Title: ' + album1.title}"></span>
+    <br><span th:text="${'Artist: ' + album1.artist}"></span>
+    <br><span th:text="${'Songs: ' + album1.songCount}"></span>
+    <br><span th:text="${'Length: ' + album1.length}"></span>
     <br><br>
 </li>
 

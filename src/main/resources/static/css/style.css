@@ -23,3 +23,9 @@ img {
   margin-right: auto;
   display: block;
 }
+
+li img {
+max-width: 30em;
+  height: 30em;
+
+}

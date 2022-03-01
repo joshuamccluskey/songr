@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Albums</h1>
+
+<li th:each="album : ${album1}">
+    <br><img th:src="${album.imgUrl}" th:alt="${album1.title}"></span>
+    <span th:text="${'Title: ' + album1.title}"></span>
+    <br><span th:text="${'Artist: ' + album1.artist}"></span>
+    <br><span th:text="${'Songs: ' + album1.songCount}"></span>
+    <br><span th:text="${'Length: ' + album1.length}"></span>
+    <br><br>
+</li>
+
+<li th:each="album : ${album2}">
+    <br><img th:src="${album.imgUrl}" th:alt="${album2.title}"></span>
+    <span th:text="${'Title: ' + album2.title}"></span>
+    <br><span th:text="${'Artist: ' + album2.artist}"></span>
+    <br><span th:text="${'Songs: ' + album2.songCount}"></span>
+    <br><span th:text="${'Length: ' + album2.length}"></span>
+    <br><br>
+</li>
+
+<li th:each="album : ${album3}">
+    <br><img th:src="${album.imgUrl}" th:alt="${album3.title}"></span>
+    <span th:text="${'Title: ' + album3.title}"></span>
+    <br><span th:text="${'Artist: ' + album3.artist}"></span>
+    <br><span th:text="${'Songs: ' + album3.songCount}"></span>
+    <br><span th:text="${'Length: ' + album3.length}"></span>
+    <br><br>
+</li>
+
+
+</body>
+</html>

@@ -42,7 +42,7 @@ Work Time: 5 Hours
 
 ### Stretch Goals
 - A user should be able to update information about albums on the site.
-- A user should be able to delete albums on the site.
+- A user should be able to delete albums on the site. 
 
 ### Methods
 

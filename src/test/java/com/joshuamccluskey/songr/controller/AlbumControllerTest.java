@@ -1,11 +1,7 @@
 package com.joshuamccluskey.songr.controller;
 
 
-import org.junit.jupiter.api.Test;
-import com.joshuamccluskey.songr.Album;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

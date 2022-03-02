@@ -8,11 +8,12 @@ import javax.persistence.Id;
 // Step 1: Add @Enitity to your model class
 @Entity
 public class Album {
-
-    public Album(){
+    //Step 3: Default constructor
+    public Album()
+    {
 
     }
-    //Step 2: Add an ID for a unique identifier in our database
+    //Step 2: Add an ID for a unique identifier for our database
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     long id;

@@ -40,11 +40,17 @@ Work Time: 5 Hours
 - A user should be able to see information about all the albums on the site.
 - A user should be able to add albums to the site.
 
+- Form takes in user input for album information saves to postgreSQL database and renders information and album art
+- Setup postgreSQL Database, repository, Added Postgres and JPA dependencies
 ### Stretch Goals
 - A user should be able to update information about albums on the site.
 - A user should be able to delete albums on the site. 
 
 ### Methods
+albumsGenerator(): integrates with album repository creates attribute
+to be used in albums template.
 
+addAlbum(): creates an album and refreshes albums page updating with new album information 
+Form uses this method to save album data to postgreSQL database and render information on albums page.
 
-Work Time: TBD
+Work Time: 7 Hours

@@ -27,14 +27,22 @@
 
 Work Time: 5 Hours
 
+## Spring RESTful Routing
+
 ## Songr Day 2
 
 ### Contributor: Joshua McCluskey
 
 ### Overview:
 
+- Update Album model to be saved into database
+- An Album has a title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that album’s art.
+- A user should be able to see information about all the albums on the site.
+- A user should be able to add albums to the site.
 
-
+### Stretch Goals
+- A user should be able to update information about albums on the site.
+- A user should be able to delete albums on the site.
 
 ### Methods
 

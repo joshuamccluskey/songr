@@ -1,10 +1,9 @@
 package com.joshuamccluskey.songr.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
+
 // Step 1: Add @Enitity to your model class
 @Entity
 public class Album {
@@ -17,12 +16,18 @@ public class Album {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     long id;
+    @Column(columnDefinition = "text")
     String title;
     String artist;
     int songCount;
     int length;
     String imgUrl;
 
+
+
+    @OneToMany(mappedBy = "songOnAlbum", cascade = CascadeType.ALL)
+    @OrderBy("trackNumber")
+    List<Song> songsOnThisAlbum;
 
 
     public Album(String title, String artist, int songCount, int length, String imgUrl) {
@@ -33,6 +38,11 @@ public class Album {
         this.length = length;
         this.imgUrl = imgUrl;
     }
+
+    public List<Song> getSongsOnThisAlbum() {
+        return songsOnThisAlbum;
+    }
+
     public long getId() {
         return id;
     }

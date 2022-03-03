@@ -34,6 +34,19 @@ public class AlbumController {
         return new RedirectView("albums");
     }
 
+    @PutMapping("editAlbum")
+    public RedirectView editAlbum(long id, String title, String artist, int songCount, int length, String imgUrl)
+    {
+        Album albumToEdit = albumRepository.findById(id).orElseThrow();
+        albumToEdit.setTitle(title);
+        albumToEdit.setArtist(artist);
+        albumToEdit.setSongCount(songCount);
+        albumToEdit.setLength(length);
+        albumToEdit.setImgUrl(imgUrl);
+
+        return new RedirectView("albums");
+    }
+
 //        Reference Album Data:
 //        Album albumLamar = new Album("DAMN.", "Kendrick Lamar", 14, 3294, "https://coverartarchive.org/release-group/b88655ba-7469-48b8-a296-b9011ab73ef3/front");
 //        Album albumSimpson = new Album("A Sailor’s Guide to Earth", "Sturgill Simpson", 9, 2334, "https://coverartarchive.org/release-group/4ac57a19-921e-4dca-8a0e-bbdc0a2b5240/front");

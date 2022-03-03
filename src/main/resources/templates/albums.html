@@ -19,6 +19,7 @@
     <br><span th:text="${'Songs: ' + album.songCount}"></span>
     <br><span th:text="${'Length (seconds): ' + album.length}"></span>
     <br><br>
+    <a th:href="${'/songs/' + album.id}">View Songs</a>
 </li>
 
 <form action="/addAlbum" method="post">

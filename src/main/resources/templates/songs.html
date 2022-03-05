@@ -9,42 +9,44 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Songs on Album</title>
 </head>
+
 <body>
+<!--<form action="/editAlbum" method="post">-->
+<!--<fieldset>-->
+<!--    <legend>Add an album</legend>-->
+<!--    <label for="title">Title</label>-->
+<!--    <input type="text" name="title" th:value="${album.title}">-->
+<!--    <label for="artist">Artist</label>-->
+<!--    <input type="text" name="artist" th:placeholder="${album.artist}">-->
+<!--    <label for="songCount">Number of Songs</label>-->
+<!--    <input type="number" name="songCount"th:placeholder="${album.songCount}">-->
+<!--    <label for="length">Number of Songs</label>-->
+<!--    <input type="number" name="length"th:placeholder="${album.length}">-->
+<!--    <label for="imgUrl">Album Cover URL</label>-->
+<!--    <input type="text" name="imgUrl"th:placeholder="${album.imgUrl}">-->
+<!--    <input type="submit" value="Update Album">-->
+<!--</fieldset>-->
+<!--</form>-->
 
-form action="/editAlbum" method="put">
-<fieldset>
-    <legend>Add an album</legend>
-    <label for="title">Title</label>
-    <input type="text" name="title" th:placeholder="${album.title}">
-    <label for="artist">Artist</label>
-    <input type="text" name="artist" th:placeholder="${album.artist}">
-    <label for="songCount">Number of Songs</label>
-    <input type="number" name="songCount"th:placeholder="${album.songCount}">
-    <label for="length">Number of Songs</label>
-    <input type="number" name="length"th:placeholder="${album.length}">
-    <label for="imgUrl">Album Cover URL</label>
-    <input type="text" name="imgUrl"th:placeholder="${album.imgUrl}">
-    <input type="submit" value="Update Album">
-</fieldset>
-</form>
+<!--<span  th:each="song : ${songs}"/>-->
+<!--<br><div th:text="${'Song Title: ' + song.name}"> Song Name</div>-->
+<!--<br><div th:text="${'Song Length: ' + song.length}"> Song Length</div>-->
+<!--<br><div th:text="${'Track Number: ' + song.trackNumber}">Song Track Number</div>-->
+<!--<br><br>-->
 
-<span th:each="song : ${songs}"/>
-    <br><div th:text="${'Track Number: ' + song.length}"></div>
-    <br><div th:text="${'Song Title: ' + song.name}"></div>
-    <br><div th:text="${'Song Length: ' + song.length}"></div>
-<br><br>
-
-<form action="/songs" method="post">
+<form action="/addSong" method="post">
     <fieldset>
         <legend>Add a Song</legend>
+        <input type="hidden" name="albumId" th:value="${albumId}">
         <label for="title">Title</label>
         <input type="text" name="title" placeholder="Song Title">
-        <label for="trackNumber">Track Number</label>
-        <input type="text" name="artist"placeholder="# of Track">
         <label for="length">Length</label>
         <input type="text" name="length"placeholder="Seconds">
-        <input type="submit" value="Add Album">
+        <label for="trackNumber">Track Number</label>
+        <input type="text" name="trackNumber" placeholder="# of Track">
+        <input type="submit" value="Add Song">
     </fieldset>
 </form>
+
 </body>
 </html>

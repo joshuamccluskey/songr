@@ -21,20 +21,28 @@ public class SongController {
     @Autowired
     AlbumRepository albumRepository;
 
-    @GetMapping("songs/{albumId}")
+    @GetMapping("/songs/{albumId}")
     public String songsGenerator(@PathVariable long albumId, Model m ) {
-        Album album = albumRepository.getById(albumId);
+        Album album = albumRepository.findById(albumId);
         m.addAttribute("songs", album.getSongsOnThisAlbum());
+        m.addAttribute("albumId", albumId);
         return "songs.html";
     }
 
-    @PostMapping("addSong")
-    public RedirectView addSong(long albumId, String title, int length, int trackNumber) {
-        Album songsOnAlbum = albumRepository.getById(albumId);
+    @GetMapping("/album-list/{albumId}")
+    public String songsLister(@PathVariable long albumId, Model m ) {
+        Album album = albumRepository.findById(albumId);
+        m.addAttribute("songs", album.getSongsOnThisAlbum());
+        return "song-list.html";
+    }
+
+    @PostMapping("/addSong")
+    public RedirectView addSong( long albumId, String title, int length, int trackNumber) {
+        Album songsOnAlbum = albumRepository.findById(albumId);
         Song songToAdd = new Song(title, length, trackNumber);
         songToAdd.setSongOnAlbum(songsOnAlbum);
         songRepository.save(songToAdd);
-        return new RedirectView("songs/{albumId}");
+        return new RedirectView("/album-list/" + albumId);
     }
 
 }

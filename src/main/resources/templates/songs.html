@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Songs on Album</title>
+</head>
+
+<body>
+<!--<form action="/editAlbum" method="post">-->
+<!--<fieldset>-->
+<!--    <legend>Add an album</legend>-->
+<!--    <label for="title">Title</label>-->
+<!--    <input type="text" name="title" th:value="${album.title}">-->
+<!--    <label for="artist">Artist</label>-->
+<!--    <input type="text" name="artist" th:placeholder="${album.artist}">-->
+<!--    <label for="songCount">Number of Songs</label>-->
+<!--    <input type="number" name="songCount"th:placeholder="${album.songCount}">-->
+<!--    <label for="length">Number of Songs</label>-->
+<!--    <input type="number" name="length"th:placeholder="${album.length}">-->
+<!--    <label for="imgUrl">Album Cover URL</label>-->
+<!--    <input type="text" name="imgUrl"th:placeholder="${album.imgUrl}">-->
+<!--    <input type="submit" value="Update Album">-->
+<!--</fieldset>-->
+<!--</form>-->
+
+<!--<span  th:each="song : ${songs}"/>-->
+<!--<br><div th:text="${'Song Title: ' + song.name}"> Song Name</div>-->
+<!--<br><div th:text="${'Song Length: ' + song.length}"> Song Length</div>-->
+<!--<br><div th:text="${'Track Number: ' + song.trackNumber}">Song Track Number</div>-->
+<!--<br><br>-->
+
+<form action="/addSong" method="post">
+    <fieldset>
+        <legend>Add a Song</legend>
+        <input type="hidden" name="albumId" th:value="${albumId}">
+        <label for="title">Title</label>
+        <input type="text" name="title" placeholder="Song Title">
+        <label for="length">Length</label>
+        <input type="text" name="length"placeholder="Seconds">
+        <label for="trackNumber">Track Number</label>
+        <input type="text" name="trackNumber" placeholder="# of Track">
+        <input type="submit" value="Add Song">
+    </fieldset>
+</form>
+
+</body>
+</html>

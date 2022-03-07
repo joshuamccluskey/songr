@@ -54,3 +54,34 @@ addAlbum(): creates an album and refreshes albums page updating with new album i
 Form uses this method to save album data to postgreSQL database and render information on albums page.
 
 Work Time: 7 Hours
+
+## Related Resources and Integration Testing
+
+## Songr Day 3
+
+### Contributor: Joshua McCluskey
+
+### Overview:
+
+- Create a Song model.
+  - Song has a title, a length (in seconds), a trackNumber, and the album on which that song appears.
+  - Ensure that the relationship between Albums and Songs is appropriately set up.
+- A user should be able to see information about all the songs on the site.
+- A user should be able to view a page with data about one particular album.
+- A user should be able to add songs to an album.
+- A user should be able to see the songs that belong to an album when looking at that album.
+
+### Stretch Goals
+- A user should be able to update information about songs on the site.
+- A user should be able to delete songs on the site.
+- A user should be able to delete albums on the site, and when they do, all associated songs should also be deleted.
+
+### Testing
+- Write integration tests for your hello world routes.
+
+- As a stretch goal, add integration testing for the routes you’ve created today.
+
+### Methods
+
+
+Work Time: TBD

@@ -4,19 +4,26 @@
 
 ### Contributor: Joshua McCluskey
 
+### Implementation
+
+- Build and run app from root songr/
+- See link and run from the file [Run App from this file](src/main/java/com/joshuamccluskey/songr/SongrApplication.java)
+
 ### Overview:
+- Files:
+- [HelloWorldCOntoller](src/main/java/com/joshuamccluskey/songr/controller/HelloWorldController.java)
+- [CapitalizeController](src/main/java/com/joshuamccluskey/songr/controller/CapitalizeController.java)
+- [SplashController](src/main/java/com/joshuamccluskey/songr/controller/SplashController.java)
+- [Hello World HTML](src/main/resources/templates/hello-world.html)
+- [Capitalize HTML](src/main/resources/templates/capitalize-words.html)
+- [Index Splash HTML](src/main/resources/templates/index.html)
 
-- Create hello route display hello world on page
-- Create capitalize route display words from path name in all caps
-- Create Splash page and style with CSS
-- Create Album class
-- Create albums route with 3 instances of album that can be hard coded for today's lab
 
-#### Stretch Goals
-- Modify your /hello route to allow users to specify their name with a query parameter, like /hello?name=Joe, and get a custom hello message back.
-- Modify your /hello route to expect a POST request instead of a GET request. Use Postman for manual testing.
-- Create a route that takes in a number, and then makes a request to the Numbers API to get a fact about that number. Return the fact.
-- Create a route that tells the user information about their computer. For example, it might tell them what browser they’re using, what OS they’re using, what their IP address is, and other such information. (Hint: This information is in the headers of the request that comes in to the server, so you may want to look at the request headers.)
+Created Spring app that contains a page for hello world. You can add words after /capitalize/example words route and it 
+it will capitalize all the words EXAMPLE WORDS on the page. Splash Page is styled with CSS. Album class and objects properties
+defined. # albums were created.
+
+
 
 ### Methods:
 
@@ -35,23 +42,26 @@ Work Time: 5 Hours
 
 ### Overview:
 
-- Update Album model to be saved into database
-- An Album has a title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that album’s art.
-- A user should be able to see information about all the albums on the site.
-- A user should be able to add albums to the site.
+- Files
+- [AlbumController](src/main/java/com/joshuamccluskey/songr/controller/AlbumController.java)
+- [Album Model](src/main/java/com/joshuamccluskey/songr/model/Album.java)
+- [AlbumRepository](src/main/java/com/joshuamccluskey/songr/repository/AlbumRepository.java)
+- [Albums HTML](src/main/resources/templates/albums.html)
 
-- Form takes in user input for album information saves to postgreSQL database and renders information and album art
-- Setup postgreSQL Database, repository, Added Postgres and JPA dependencies
-### Stretch Goals
-- A user should be able to update information about albums on the site.
-- A user should be able to delete albums on the site. 
+
+Be able to create albums with a form and display the albums on the site. The form will post it into the database and the album cover
+and info displays to the user in order that they were entered. This is an example of setting PostgreSQL Database and 
+posting and persisting data/
+
 
 ### Methods
-albumsGenerator(): integrates with album repository creates attribute
+- albumsGenerator(): integrates with album repository creates attribute
 to be used in albums template.
 
-addAlbum(): creates an album and refreshes albums page updating with new album information 
+- addAlbum(): creates an album and refreshes albums page updating with new album information 
 Form uses this method to save album data to postgreSQL database and render information on albums page.
+
+Album findById(long id): Repo method that allows us to fing the album by its unique ID
 
 Work Time: 7 Hours
 
@@ -62,26 +72,47 @@ Work Time: 7 Hours
 ### Contributor: Joshua McCluskey
 
 ### Overview:
+- Files
+- [SongController file](src/main/java/com/joshuamccluskey/songr/controller/SongController.java)
+- [SongModel File](src/main/java/com/joshuamccluskey/songr/controller/SongController.java)
+- Integration Tests
+- [Integration Tests](src/test/java/com/joshuamccluskey/songr/SongrApplicationTests.java)
+- [SongRepository](src/main/java/com/joshuamccluskey/songr/repository/SongRepository.java)
+- [Songs HTML](src/main/resources/templates/songs.html)
 
-- Create a Song model.
-  - Song has a title, a length (in seconds), a trackNumber, and the album on which that song appears.
-  - Ensure that the relationship between Albums and Songs is appropriately set up.
-- A user should be able to see information about all the songs on the site.
-- A user should be able to view a page with data about one particular album.
-- A user should be able to add songs to an album.
-- A user should be able to see the songs that belong to an album when looking at that album.
-
-### Stretch Goals
-- A user should be able to update information about songs on the site.
-- A user should be able to delete songs on the site.
-- A user should be able to delete albums on the site, and when they do, all associated songs should also be deleted.
-
+Be able to create a list of songs. The user fills the form and enters the information into the database. After submission
+the song is displayed to only for that album. The album songs are a display of a one to many relationship. One album can have many
+songs associated with it. The integration tests were created to test various pages and strings or actual HTML depending on the page. 
+ 
 ### Testing
-- Write integration tests for your hello world routes.
 
-- As a stretch goal, add integration testing for the routes you’ve created today.
+Integration testing: 
 
+- testHelloWorld() - Tests for the strings Hello World and HTML for  Hello World!
+- testIndexPage() - Individual Tests for the strings in the headers Welcome to Vibe and Chill
+- testAlbumsPage() - Tests for the strings Albums and HTML for  Albums!
+- testSongsPage() - Tests for the string Song in dynamic header
+
+- [Integration Tests](src/test/java/com/joshuamccluskey/songr/SongrApplicationTests.java)
+
+
+
+- Completed stretch goal, add integration testing for the routes you’ve created today.
+ 
 ### Methods
 
+- songsGenerator() : Gets the route for songs page associated by the album and its unique id. There is a form there and list of signs
 
-Work Time: TBD
+- addSong(): Post a song to the database with it associated with the album it was added. It is added into database on PostgreSQL and persists.
+
+Work Time: 3 hours
+
+
+### Refactor 03/11/2022
+
+- Fixed bug to display list of  songs for each album
+- Built dynamic song header for each album
+- Built integration tests for pages HelloWorld, Index Page, Albums Page
+- Overhauled README File with implementation instructions and links to all files
+
+Work Time: 2.5 Hours

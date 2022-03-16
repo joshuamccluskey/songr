@@ -6,8 +6,15 @@
 
 ### Implementation
 
-- Build and run app from root songr/
-- See link and run from the file [Run App from this file](src/main/java/com/joshuamccluskey/songr/SongrApplication.java)
+- Please adjust postgres url, username, password to access your local database on the following link [Postgres Properties](src/main/resources/application.properties)
+- Build and run app from root songr/ on IDE or using the following in the command line/ terminal
+- See link and run from the file [Run App from this file in IDE](src/main/java/com/joshuamccluskey/songr/SongrApplication.java)
+- Link to browser [See App in Browser](http://localhost:8080/)
+- For integration testing, run command Line/terminal  : `./gradlew test`
+- For build, input in command Line/terminal : `./gradle build`
+- To run app, input in command line/terminal: `./gradle bootRun`
+- Click on "See Albums" link or click image on splash page or click the following link [Albums Page](http://localhost:8080/albums)
+
 
 ### Overview:
 - Files:
@@ -114,5 +121,16 @@ Work Time: 3 hours
 - Built dynamic song header for each album
 - Built integration tests for pages HelloWorld, Index Page, Albums Page
 - Overhauled README File with implementation instructions and links to all files
+
+Work Time: 2.5 Hours
+
+### Refactor 03/15/2022
+
+- Troubleshoot to find and reproduce error
+- Fixed bug on add Album
+- Fixed error on bad running integration test causing bad test build
+- Added links to go between pages
+- Modified View Songs Link
+- Implementation instructions include command line and IDE instructions
 
 Work Time: 2.5 Hours

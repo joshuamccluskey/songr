@@ -1,12 +1,17 @@
 package com.joshuamccluskey.songr.model;
 
 
+import com.joshuamccluskey.songr.repository.AlbumRepository;
+import com.joshuamccluskey.songr.repository.SongRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.util.List;
 
 // Step 1: Add @Enitity to your model class
 @Entity
 public class Album {
+
     //Step 3: Default constructor
     public Album()
     {
@@ -31,7 +36,6 @@ public class Album {
 
 
     public Album(String title, String artist, int songCount, int length, String imgUrl) {
-        this.id = id;
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;

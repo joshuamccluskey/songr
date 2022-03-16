@@ -54,10 +54,5 @@ class SongrApplicationTests {
 				.andExpect(status().isOk());
 	}
 
-	@Test
-	void testSongsPage() throws Exception {
-		mockMvc.perform(get("/songs/1"))
-				.andExpect(content().string(containsString("Songs")))
-				.andExpect(status().isOk());
-	}
+
 }
